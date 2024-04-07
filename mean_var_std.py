@@ -16,10 +16,7 @@ def calculate(list):
         mean1 = shaped_arr.mean(axis=1, keepdims=True)
         mean1 = mean1.T
         meanf = arr.mean(axis=0, keepdims=True)
-        mean0 = mean0.tolist()
-        mean1 = mean1.tolist()
-        meanf = meanf.tolist()
-        mean = mean0 + mean1 + meanf
+        mean = (mean0.tolist() + mean1.tolist() + meanf.tolist())
         calculations['mean'] = mean
 
         # variance calcs
@@ -27,10 +24,7 @@ def calculate(list):
         var1 = shaped_arr.var(axis=1, keepdims=True)
         var1 = var1.T
         varf = arr.var(axis=0, keepdims=True)
-        var0 = var0.tolist()
-        var1 = var1.tolist()
-        varf = varf.tolist()
-        var = var0 + var1 + varf
+        var = (var0.tolist() + var1.tolist() + varf.tolist())
         calculations['variance'] = var
 
         # standard deviation calcs
@@ -38,10 +32,7 @@ def calculate(list):
         std1 = shaped_arr.std(axis=1, keepdims=True)
         std1 = std1.T
         stdf = arr.std(axis=0, keepdims=True)
-        std0 = std0.tolist()
-        std1 = std1.tolist()
-        stdf = stdf.tolist()
-        std = std0 + std1 + stdf
+        std = (std0.tolist() + std1.tolist() + stdf.tolist())
         calculations['standard deviation'] = std
 
         # find max values
@@ -49,10 +40,7 @@ def calculate(list):
         max1 = shaped_arr.max(axis=1, keepdims=True)
         max1 = max1.T
         maxf = arr.max(axis=0, keepdims=True)
-        max0 = max0.tolist()
-        max1 = max1.tolist()
-        maxf = maxf.tolist()
-        max = max0 + max1 + maxf
+        max = (max0.tolist() + max1.tolist() + maxf.tolist())
         calculations['max'] = max
 
         # find min values
@@ -60,10 +48,7 @@ def calculate(list):
         min1 = shaped_arr.min(axis=1, keepdims=True)
         min1 = min1.T
         minf = arr.min(axis=0, keepdims=True)
-        min0 = min0.tolist()
-        min1 = min1.tolist()
-        minf = minf.tolist()
-        min = min0 + min1 + minf
+        min = (min0.tolist() + min1.tolist() + minf.tolist())
         calculations['min'] = min
 
         # sum values
@@ -71,10 +56,7 @@ def calculate(list):
         sum1 = shaped_arr.sum(axis=1, keepdims=True)
         sum1 = sum1.T
         sumf = arr.sum(axis=0, keepdims=True)
-        sum0 = sum0.tolist()
-        sum1 = sum1.tolist()
-        sumf = sumf.tolist()
-        sum = sum0 + sum1 + sumf
+        sum = (sum0.tolist() + sum1.tolist() + sumf.tolist())
         calculations['sum'] = sum
 
     return calculations
