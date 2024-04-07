@@ -2,23 +2,20 @@ import numpy as np
 
 
 def calculate(list):
+    # Check to see if the list has less than 9 values, raise an error if less than 9
+    # I would probably make this "!= 9" rather than "< 9" so it errors if there are greater than 9 values as well
     if len(list) < 9:
         raise ValueError("List must contain nine numbers.")
     else:
         calculations = {}
         arr = np.asarray(list)
-        print(arr)
         shaped_arr = arr.reshape(3, 3)
-        print(shaped_arr)
 
         # mean calcs
         mean0 = shaped_arr.mean(axis=0, keepdims=True)
-        print(mean0)
         mean1 = shaped_arr.mean(axis=1, keepdims=True)
         mean1 = mean1.T
-        print(mean1)
         meanf = arr.mean(axis=0, keepdims=True)
-        print(meanf)
         mean0 = mean0.tolist()
         mean1 = mean1.tolist()
         meanf = meanf.tolist()
@@ -27,12 +24,9 @@ def calculate(list):
 
         # variance calcs
         var0 = shaped_arr.var(axis=0, keepdims=True)
-        print(var0)
         var1 = shaped_arr.var(axis=1, keepdims=True)
         var1 = var1.T
-        print(var1)
         varf = arr.var(axis=0, keepdims=True)
-        print(varf)
         var0 = var0.tolist()
         var1 = var1.tolist()
         varf = varf.tolist()
@@ -41,12 +35,9 @@ def calculate(list):
 
         # standard deviation calcs
         std0 = shaped_arr.std(axis=0, keepdims=True)
-        print(std0)
         std1 = shaped_arr.std(axis=1, keepdims=True)
         std1 = std1.T
-        print(std1)
         stdf = arr.std(axis=0, keepdims=True)
-        print(stdf)
         std0 = std0.tolist()
         std1 = std1.tolist()
         stdf = stdf.tolist()
@@ -55,11 +46,9 @@ def calculate(list):
 
         # find max values
         max0 = shaped_arr.max(axis=0, keepdims=True)
-        print(max0)
         max1 = shaped_arr.max(axis=1, keepdims=True)
         max1 = max1.T
         maxf = arr.max(axis=0, keepdims=True)
-        print(maxf)
         max0 = max0.tolist()
         max1 = max1.tolist()
         maxf = maxf.tolist()
@@ -68,11 +57,9 @@ def calculate(list):
 
         # find min values
         min0 = shaped_arr.min(axis=0, keepdims=True)
-        print(min0)
         min1 = shaped_arr.min(axis=1, keepdims=True)
         min1 = min1.T
         minf = arr.min(axis=0, keepdims=True)
-        print(minf)
         min0 = min0.tolist()
         min1 = min1.tolist()
         minf = minf.tolist()
@@ -81,11 +68,9 @@ def calculate(list):
 
         # sum values
         sum0 = shaped_arr.sum(axis=0, keepdims=True)
-        print(sum0)
         sum1 = shaped_arr.sum(axis=1, keepdims=True)
         sum1 = sum1.T
         sumf = arr.sum(axis=0, keepdims=True)
-        print(sumf)
         sum0 = sum0.tolist()
         sum1 = sum1.tolist()
         sumf = sumf.tolist()
